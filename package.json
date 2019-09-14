@@ -1,0 +1,27 @@
+{
+  "name": "swenson-he-coffee-challenge",
+  "version": "1.0.0",
+  "description": "Swenson HE BackEnd Challenge",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon -w src --exec babel-node --presets env src/server.js",
+    "start": "nodemon --exec babel-node --presets env src/server.js"
+  },
+  "keywords": [
+    "node",
+    "express"
+  ],
+  "author": "Ogo Elumeze",
+  "license": "ISC",
+  "dependencies": {
+    "babel-preset-env": "^1.7.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.1.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-latest": "^6.24.1",
+    "nodemon": "^1.19.2"
+  }
+}
