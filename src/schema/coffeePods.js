@@ -74,7 +74,7 @@ const CoffeePodsSchema = new Schema({
 /**
  * assign the entities of the enums as a static object
  */
-Object.assign(CoffeeMahineSchema.statics, {
+Object.assign(CoffeePodsSchema.statics, {
     ProductTypes,
     CoffeeFlavors,
     PackSizes
