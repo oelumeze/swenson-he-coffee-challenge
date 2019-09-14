@@ -1,10 +1,16 @@
 import { CoffeeMachineModel } from '../schema/coffeeMachine';
 import { success, failure } from '../utilities/responseHandler';
 
-export const getCoffeeMachineByProductType = (req, res, next) => 
-    CoffeeMachineModel.find({ product_type: req.query.productType })
+export const getCoffeeMachineByProductType = (req, res, next) => {
+    CoffeeMachineModel.find(req.params)
         .then(success(res))
-        .catch(failure(res, 401), next)
+        .catch(failure(res, 400), next)
+}
+export const getCoffeeMachineByWaterLine = (req, res, next) => {
+    CoffeeMachineModel.find(req.params)
+        .then(success(res))
+        .catch(failure(res, 400), next)
+}
 
 export const createCoffeeMachine = (req, res, next) => {
     let coffeeMachineInfo = {
@@ -14,5 +20,5 @@ export const createCoffeeMachine = (req, res, next) => {
     };
     CoffeeMachineModel.create(coffeeMachineInfo)
         .then(success(res, 201))
-        .catch(failure(res, 401), next)
+        .catch(failure(res, 400), next)
 }
