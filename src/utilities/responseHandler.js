@@ -1,7 +1,6 @@
 
 export const success = (res, status) => (entity) => {
     if(entity) {
-        console.log("entity", entity)
         let newResponseObject =  { 
             success: true,
             error: false,
