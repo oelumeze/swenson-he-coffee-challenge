@@ -3,22 +3,22 @@ import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 //coffee pods constants 
-const COFFEE_POD_LARGE = 'COFFEE_POD_LARGE';
-const COFFEE_POD_SMALL = 'COFFEE_POD_SMALL';
-const ESPRESSO_POD = 'ESPRESSO_POD';
+const COFFEE_POD_LARGE = 'large coffee pod';
+const COFFEE_POD_SMALL = 'small coffee pod';
+const ESPRESSO_POD = 'espresso pod';
 
 //coffee flavor constants
-const COFFEE_FLAVOR_VANILLA = 'COFFEE_FLAVOR_VANILLA';
-const COFFEE_FLAVOUR_CARAMEL = 'COFFEE_FLAVOUR_CARAMEL';
-const COFFEE_FLAVOR_PSL = 'COFFEE_FLAVOR_PSL';
-const COFFEE_FLAVOR_MOCHA = 'COFFEE_FLAVOR_MOCHA';
-const COFFEE_FLAVOR_HAZELNUT = 'COFFEE_FLAVOR_HAZELNUT';
+const COFFEE_FLAVOR_VANILLA = 'vanilla';
+const COFFEE_FLAVOUR_CARAMEL = 'caramel';
+const COFFEE_FLAVOR_PSL = 'psl';
+const COFFEE_FLAVOR_MOCHA = 'mocha';
+const COFFEE_FLAVOR_HAZELNUT = 'hazelnut';
 
 //pack size constants
-const ONE_DOZEN = 12;
-const THREE_DOZEN = 36;
-const FIVE_DOZEN = 60;
-const SEVEN_DOZEN = 84;
+const ONE_DOZEN = '1 dozen';
+const THREE_DOZEN = '3 dozen';
+const FIVE_DOZEN = '5 dozen';
+const SEVEN_DOZEN = '7 dozen';
 
 
 /**
@@ -66,10 +66,11 @@ const CoffeePodsSchema = new Schema({
         enum: Object.values(CoffeeFlavors)
     },
     pack_size: {
-        type: Number,
+        type: String,
         enum: Object.values(PackSizes)
     }
 });
+
 
 /**
  * assign the entities of the enums as a static object
@@ -79,6 +80,8 @@ Object.assign(CoffeePodsSchema.statics, {
     CoffeeFlavors,
     PackSizes
 });
+
+
 
 export const CoffeePodsModel = mongoose.model('coffeePods', CoffeePodsSchema);
 

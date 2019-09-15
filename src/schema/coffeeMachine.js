@@ -2,9 +2,9 @@ import mongoose from 'mongoose';
 
 const Schema = mongoose.Schema;
 //coffee machine constants 
-const COFFEE_MACHINE_LARGE = 'COFFEE_MACHINE_LARGE';
-const COFFEE_MACHINE_SMALL = 'COFFEE_MACHINE_SMALL';
-const ESPRESSO_MACHINE = 'ESPRESSO_MACHINE';
+const COFFEE_MACHINE_LARGE = 'large machine';
+const COFFEE_MACHINE_SMALL = 'small machine';
+const ESPRESSO_MACHINE = 'espresso machine';
 
 
 /**
@@ -28,11 +28,12 @@ const WaterLineCompatibilities = Object.freeze({
 const CoffeeMahineSchema = new Schema({
     itemNumber: {
         type: String,
-        required: true
+        // required: true
     },
     product_type: {
         type: String,
-        enum: Object.values(ProductTypes)
+        enum: Object.values(ProductTypes),
+        required: true
     },
     water_line_compatible: {
         type: Boolean,
