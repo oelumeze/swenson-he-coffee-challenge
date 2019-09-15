@@ -1,10 +1,11 @@
 import mongoose from 'mongoose';
+import dotenv from 'dotenv';
+
+dotenv.config()
 
 export const connectdb = async () => {
-
-    let mongo_db_url = 'mongodb://localhost:27017/Swenson_Coffee';
     try {
-        await mongoose.connect(mongo_db_url, { useNewUrlParser: true, useUnifiedTopology: true })
+        await mongoose.connect(process.env.MONGODB_URL+'/'+process.env.MONGODB_DATABASE_NAME, { useNewUrlParser: true, useUnifiedTopology: true })
     } catch (ex) {
         console.log("error in connetion", ex)
     }
