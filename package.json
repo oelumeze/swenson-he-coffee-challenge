@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "dev": "nodemon -w src --exec babel-node --presets env src/server.js",
-    "start": "nodemon --exec babel-node --presets env src/server.js"
+    "start": "nodemon --exec babel-node --presets env src/server.js",
+    "test": "./node_modules/.bin/mocha --require babel-core/register src/tests/*.spec.js"
   },
   "keywords": [
     "node",
@@ -21,11 +22,17 @@
     "express": "^4.17.1",
     "mongo": "^0.1.0",
     "mongodb": "^3.3.2",
-    "mongoose": "^5.7.1"
+    "mongoose": "^5.7.1",
+    "save-dev": "^2.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-latest": "^6.24.1",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "mocha": "^6.2.0",
     "nodemon": "^1.19.2"
   }
 }
