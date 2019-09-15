@@ -2,9 +2,9 @@ import mongoose from 'mongoose';
 
 const Schema = mongoose.Schema;
 //coffee machine constants 
-const COFFEE_MACHINE_LARGE = 'large machine';
-const COFFEE_MACHINE_SMALL = 'small machine';
-const ESPRESSO_MACHINE = 'espresso machine';
+const COFFEE_MACHINE_LARGE = 'COFFEE_MACHINE_LARGE';
+const COFFEE_MACHINE_SMALL = 'COFFEE_MACHINE_SMALL';
+const ESPRESSO_MACHINE = 'ESPRESSO_MACHINE';
 
 
 /**
