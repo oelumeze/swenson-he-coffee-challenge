@@ -3,20 +3,21 @@ import bodyParser from 'body-parser';
 import cors from 'cors';
 import * as connection from './connection/index';
 import router from './routes/index';
+import {checkScriptsLoaded} from './preloaders';
+import dotenv from 'dotenv';
 
-
-const PORT = 8001;
+dotenv.config()
+const PORT = 8001 || process.env.HTTP_PORT;
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(
-    (req, res, next) => {   
-    connection.connectdb()
-    next();
-}
-);//connection to the database
+
+
+connection.connectdb();//connection to the database
+checkScriptsLoaded();
+
 app.use('/', router) //set up all routes/endpoints
 
 app.listen(PORT);
