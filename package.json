@@ -5,10 +5,10 @@
   "main": "server.js",
   "scripts": {
     "clean": "rm -rf build && mkdir build",
-    "build-babel": "babel -d ./build ./src/server.js -s",
+    "build-babel": "babel -d ./build ./src -s",
     "build": "npm run clean && npm run build-babel",
     "dev": "nodemon -w src --exec babel-node --presets env src/server.js",
-    "start":  "npm run build && node ./build/src/server.js",
+    "start":  "npm run build && node ./build/server.js",
     "test": "./node_modules/.bin/mocha --require babel-core/register src/tests/*.spec.js"
   },
   "keywords": [
