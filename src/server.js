@@ -7,7 +7,7 @@ import { checkCoffeeMachineDataIsLoaded, checkCoffeePodDataIsLoaded} from './pre
 import dotenv from 'dotenv';
 
 dotenv.config()
-const PORT = 8001 || process.env.HTTP_PORT;
+const PORT = process.env.PORT || process.env.HTTP_PORT || 8001;
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());

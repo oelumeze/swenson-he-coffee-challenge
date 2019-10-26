@@ -35,6 +35,10 @@
     "mongoose": "^5.7.1",
     "save-dev": "^2.0.0"
   },
+  "engines": {
+    "node": "12.x",
+    "npm": "6.x"
+  },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
